@@ -13,7 +13,7 @@ export default class Note {
 
     getTemplate() {
         return `
-        <li class="nav-note">
+        <li class="nav-note" id='{{id}}'>
             <button class="remove-btn">X</button>
             <div class = 'note_name'>{{title}}</div>
             <div class = 'note_time'>{{date}}</div>
@@ -23,10 +23,11 @@ export default class Note {
 
     attachEventListeners() {
         const btnRemove = this.el.querySelector('.remove-btn');
-        const iEl = btnRemove.getElementsByTagName('button'); // ???
+        const iEl = btnRemove.getElementsByTagName('BUTTON');
 
         btnRemove.onclick = () => {
             this.notesManager.removeNote(this);
+            history.pushState(null, null, '/');
         }
 
         this.el.addEventListener('click', (e) => {
@@ -45,6 +46,7 @@ export default class Note {
         const desc = this.body.slice(0, 20)
 
         tmpLi.innerHTML = tpl
+            .replace('{{id}}', this.id)
             .replace('{{title}}', this.title)
             .replace('{{date}}', time)
             .replace('{{description}}', desc);

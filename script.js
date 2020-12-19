@@ -52,6 +52,7 @@ function make_json_note({id, title, body, date}) {
     noteManager.renderNotes();
 
     const newNoteBtn = document.getElementById('add-button');
+
     newNoteBtn.onclick = () => {
         noteManager.addNote({
             id: `f${(~~(Math.random() * 1e8)).toString(16)}`,
@@ -60,6 +61,8 @@ function make_json_note({id, title, body, date}) {
             date: new Date()
         })
     };
+
+
 
 
 

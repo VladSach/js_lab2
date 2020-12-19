@@ -28,15 +28,14 @@ export default class NoteManager {
     }
 
     removeNote(note) {
+        
         this.notes.splice(this.notes.indexOf(note), 1);
-        this.renderNotes();
         this.onRemoveNote(note);
 
         if (this.currentNote === note) {
-            this.noteBody.innerHTML = this.defaultField.innerHTML;
             this.currentNote = null;
         }
-
+        this.renderNotes();
 
     }
 
@@ -50,6 +49,9 @@ export default class NoteManager {
 
         this.noteBody.replaceWith(newEd);
         this.noteBody = newEd;
+
+        const choosenNote = document.getElementById(note.id);
+        choosenNote.style.backgroundColor = '#8d5506';
     }
 
     onEditTitle(note) {
@@ -57,6 +59,9 @@ export default class NoteManager {
         note.date = new Date();
         this.renderNotes();
         this.onEditNote(note);
+
+        const choosenNote = document.getElementById(note.id);
+        choosenNote.style.backgroundColor = '#8d5506';
     }
 
     onEditBody(note) {
@@ -64,7 +69,9 @@ export default class NoteManager {
         note.date = new Date();
         this.renderNotes();
         this.onEditNote(note);
-        
+
+        const choosenNote = document.getElementById(note.id);
+        choosenNote.style.backgroundColor = '#8d5506';
     }
 
     addNote(note) {
@@ -75,5 +82,7 @@ export default class NoteManager {
         this.onNewNote(objNote);
         this.onShowNote(objNote);
     }
+
+
 
 }
