@@ -5,29 +5,26 @@
         <link rel="stylesheet" type="text/css" href="style.css"/>
     </head>
     <body>
-        <div class = 'main'>
-            <div class = 'left_bar'>
-                <div id = 'divButton'>
-                    <button id = "addingButton" class="addButton" title="Add new note">Новая заметка</button>
-                </div>
-                <!--  Шаблон вставляемого блока заметки
-                <div class = 'note_mark'>
-                    <div class = 'note_name'>Name</div>
-                    <div class = 'note_time'>10/10/2002</div>
-                    <div class = 'note_description'>SomePartOfText</div>
-                </div>
-                -->
+        <main>
+            <div class='left-bar'>
+                <button id ="add-button">Новая заметка</button>
+                <ul class='left-bar-nav'>
+                    <li class="nav-item">
+                        <button class="remove-btn">X</button>
+                        <div class = 'note_name'>Name</div>
+                        <div class = 'note_time'>10/10/2002</div>
+                        <div class = 'note_description'>SomePartOfText</div>
+                    </li>
+                </ul>
             </div>
-            <div class = 'note_body'>
-                <!--  Шаблон вставляемого блока текста
-                <div class = 'note_body_time'>10 января 2002 г. в 18:23</div>
-                <div class = 'note_body_text'>
-                    <h1>Name</h1>
-                    <p>here is some text</p>
+            <div class = 'note-body'>
+                <div class = 'note-body-time'>10 января 2002 г. в 18:23</div>
+                <div class = 'note-body-text'>
+                    <input id="note-title" type="text" placeholder="Name"/>
+                    <textarea class="note-textarea" placeholder="Text"></textarea>
                 </div>
-                -->
             </div>
-        </div>
+        </main>
         <script src="script.js"></script>
     </body>
 </html>
