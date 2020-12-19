@@ -1,5 +1,5 @@
 import NoteManager from "./NoteManager.js";
-import IndexView from "./IndexView.js";
+import HashChanger from "./HashChange.js";
 
 const noteManager = new NoteManager({
     el: document.querySelector('.left-bar-nav'),
@@ -48,7 +48,7 @@ function make_json_note({id, title, body, date}) {
 }
 
 (function () {
-    new IndexView(noteManager);
+    new HashChanger(noteManager);
     noteManager.renderNotes();
 
     const newNoteBtn = document.getElementById('add-button');

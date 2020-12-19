@@ -16,13 +16,26 @@ main {
 
 .left-bar {
     width: 20%;
-    height: 100vh;
+    height: 500vh;
     float: left;
     overflow-x: hidden;
     border-right: 0.12rem solid black;
     background-color: #1d1c23;
     position: fixed;
+    
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.left-bar::-webkit-scrollbar {
+    display: none;
+}
+ 
+/* Hide scrollbar for IE, Edge and Firefox */
+.left-bar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 
 #add-button {
     width: 100%;
@@ -131,6 +144,7 @@ main {
     background-color: #282829;
     border-bottom: 0.2rem solid #1d1c23;
     height: 7%;
+    margin-top: 3rem;
 }
 
 .note-title:focus {

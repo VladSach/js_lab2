@@ -6,7 +6,6 @@ export default class NoteManager {
     constructor ({el, noteBody, notes}) {
         this.el = el;
         this.noteBody = noteBody;
-        this.defaultField = noteBody;
 
         this.notes = notes.map(note => new Note(note, this));
         this.currentNote = null;
@@ -37,6 +36,8 @@ export default class NoteManager {
             this.noteBody.innerHTML = this.defaultField.innerHTML;
             this.currentNote = null;
         }
+
+
     }
 
     onShowNote(note) {

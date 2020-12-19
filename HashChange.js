@@ -1,4 +1,4 @@
-export default class IndexView {
+export default class HashChanger {
     constructor(noteManager) {
         window.addEventListener('hashchange', () => this.onRouteChange());
         this.noteManager = noteManager;
