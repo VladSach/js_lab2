@@ -54,14 +54,17 @@ export default class NoteManager {
 
     onEditTitle(note) {
         note.title = this.noteBody.querySelector('.note-title').value;
+        note.date = new Date();
         this.renderNotes();
         this.onEditNote(note);
     }
 
     onEditBody(note) {
         note.body = this.noteBody.querySelector('.note-textarea').value;
+        note.date = new Date();
         this.renderNotes();
         this.onEditNote(note);
+        
     }
 
     addNote(note) {
