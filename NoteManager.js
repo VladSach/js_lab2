@@ -1,4 +1,3 @@
-"use strict";
 import Note from "./Note.js";
 import NoteBody from "./NoteBody.js";
 
@@ -23,8 +22,8 @@ export default class NoteManager {
         this.notes.forEach(note => this.renderNote(note.buildNote()));
     }
 
-    renderNote(noteEl) {
-        this.el.append(noteEl);
+    renderNote(note) {
+        this.el.append(note);
     }
 
     removeNote(note) {
@@ -36,7 +35,7 @@ export default class NoteManager {
             this.currentNote = null;
         }
         this.renderNotes();
-
+        
     }
 
     onShowNote(note) {
@@ -82,7 +81,5 @@ export default class NoteManager {
         this.onNewNote(objNote);
         this.onShowNote(objNote);
     }
-
-
 
 }

@@ -1,4 +1,3 @@
-"use strict";
 export default class Note {
     constructor({id, title, date, body}, noteManager) {
         this.el = null;
@@ -23,15 +22,14 @@ export default class Note {
 
     attachEventListeners() {
         const btnRemove = this.el.querySelector('.remove-btn');
-        const iEl = btnRemove.getElementsByTagName('BUTTON');
 
         btnRemove.onclick = () => {
             this.notesManager.removeNote(this);
-            history.pushState(null, null, '/');
+            
         }
 
         this.el.addEventListener('click', (e) => {
-            if (e.target !== iEl[0])
+            if (e.target !== btnRemove[0])
                 this.notesManager.onShowNote(this);
         });
 

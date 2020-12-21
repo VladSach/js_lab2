@@ -25,17 +25,14 @@ function localStorageLoader() {
 
 noteManager.onNewNote = (note) => {
     localStorage.setItem(note.id, JSON.stringify(make_json_note(note)));
-    console.log("Note added ", note.id);
 };
 
 noteManager.onEditNote = (note) => {
     localStorage.setItem(note.id, JSON.stringify(make_json_note(note)));
-    console.log("Note changed ", note.id);
 };
 
 noteManager.onRemoveNote = (note) => {
     localStorage.removeItem(note.id);
-    console.log("Note removed ", note.id);
 };
 
 function make_json_note({id, title, body, date}) {
@@ -61,9 +58,4 @@ function make_json_note({id, title, body, date}) {
             date: new Date()
         })
     };
-
-
-
-
-
 })();

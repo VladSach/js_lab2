@@ -3,9 +3,10 @@ export default class HashChanger {
         window.addEventListener('hashchange', () => this.onRouteChange());
         this.noteManager = noteManager;
 
-        if (window.location.hash)
+        if (window.location.hash){
             if (!this.loadContent(window.location.hash.substring(1)))
                 history.pushState(null, null, '/');
+        }
     }
 
     onRouteChange() {
