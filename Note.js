@@ -12,9 +12,9 @@ export default class Note {
 
     getTemplate() {
         return `
-        <li class="nav-note" id='{{id}}'>
+        <li class="nav-note" id='${this.id}'>
             <button class="remove-btn">X</button>
-            <div class = 'note_name'>{{title}}</div>
+            <div class = 'note_name'>${this.title}</div>
             <div class = 'note_time'>{{date}}</div>
             <div class = 'note_description'>{{description}}</div>
         </li>`
@@ -44,8 +44,6 @@ export default class Note {
         const desc = this.body.slice(0, 20)
 
         tmpLi.innerHTML = tpl
-            .replace('{{id}}', this.id)
-            .replace('{{title}}', this.title)
             .replace('{{date}}', time)
             .replace('{{description}}', desc);
 

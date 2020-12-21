@@ -12,8 +12,8 @@ export default class NoteBody {
         <div class = 'note-body'>
             <div class = 'note-body-time'>{{date}}</div>
             <div class = 'note-body-text'>
-                <textarea class="note-title" type="text" placeholder="Name" maxlength = 20 contenteditable="true">{{title}}</textarea>
-                <textarea class="note-textarea" placeholder="Text" contenteditable="true">{{body}}</textarea>
+                <textarea class="note-title" type="text" placeholder="Name" maxlength = 20 contenteditable="true">${this.note.title}</textarea>
+                <textarea class="note-textarea" placeholder="Text" contenteditable="true">${this.note.body}</textarea>
             </div>
         </div>`;
     }
@@ -46,8 +46,6 @@ export default class NoteBody {
 
         tmpDiv.innerHTML = tpl
             .replace('{{date}}', time)
-            .replace('{{title}}', this.note.title)
-            .replace('{{body}}', this.note.body);
 
         this.el = tmpDiv.children[0];
 
